@@ -2,6 +2,8 @@
 
 This app converts a user made canvas drawing to an 3D-drawing printable stl file.
 
+Hosted on github pages: https://git-danielvisser.github.io/3D-print-my-drawing/ 
+
 **With the help of:**
 
 - jankovicsandras (ImagetracerJs) https://github.com/jankovicsandras/imagetracerjs
