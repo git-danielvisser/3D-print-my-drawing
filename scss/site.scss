@@ -1,0 +1,44 @@
+@use 'screen_size.scss' as ss;
+
+/**
+* Site
+*/
+
+.site {
+    display: flex;
+    flex-flow: column;
+
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+
+    padding: 15px;
+
+    background: #000;
+
+    @include ss.md {
+        padding: 30px;
+    }
+
+    &__site-title {
+        display: inline;
+    }
+}
+
+.site-title {
+    font-family: 'Ranchers', cursive;
+    font-size: 1.3em;
+
+    letter-spacing: 1px;
+
+    color: #fff;
+
+    @include ss.md {
+        font-size: 2em;
+
+        letter-spacing: 2px;
+    }
+}

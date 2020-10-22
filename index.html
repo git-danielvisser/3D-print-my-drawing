@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4d9800fcd3.js" crossorigin="anonymous"></script>
+    <script src="js/libs/imagetracer_v1.2.6.js"></script> <!-- https://github.com/jankovicsandras/imagetracerjs -->
+    <script src="js/libs/three/three.js"></script> <!-- https://github.com/mrdoob/three.js -->
+    <script src="js/libs/three/controls/OrbitControls.js"></script> <!-- https://gist.github.com/mrflix/8351020 -->
+    <script src="js/libs/three/STLExporter.js"></script> <!-- https://github.com/atnartur/three-STLexporter -->
+    <script src="js/libs/FileSaver.js"></script> <!-- https://github.com/eligrey/FileSaver.js -->
+    <script src="js/main.js" type="module"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3DPrint my drawing</title>
+  </head>
+  <body>
+
+    <div class="site">
+      <header class="header">
+        <h1 class="site-title header__site-title">
+          3DPrint my drawing!
+        </h1>
+      </header>
+
+      <div class="c-page-switcher js-page-switcher">
+
+        <!--- Enter canvas size page -->
+        <div class="c-page-switcher__page">
+          <div class="l-flex --flow-row-md">
+            <div class="l-flex__item">
+              <div class="c-text-field">
+                <label class="c-text-field__label" for="canvas_width">Drawing width (mm)</label>
+                <input class="c-text-field__input js-canvas-width-input" id="canvas_width" type="text"  name="canvas_width" value="" required>
+              </div>
+            </div>
+            <div class="l-flex__item h-mt-20 h-mt-0-md h-ml-20-md">
+              <div class="c-text-field">
+                <label class="c-text-field__label" for="canvas_height">Drawing height (mm)</label>
+                <input class="c-text-field__input js-canvas-height-input" id="canvas_height" type="text"  name="canvas_height" value="" required>
+              </div>
+            </div>
+          </div>
+          <button class="c-button h-mt-30 js-draw-step-button">Start drawing!</button>
+        </div>
+
+        <!--- Drawing page -->
+        <div class="c-page-switcher__page h-hidden">
+          <div class="c-draw js-draw">
+            <div class="c-draw__controls js-draw-controls">
+              <button class="c-icon-button c-draw__control js-draw-eraser-s"><i class="fas fa-eraser"></i></span>
+              <button class="c-icon-button c-draw__control js-draw-eraser-m"><i class="fas fa-2x fa-eraser"></i></span>
+              <button class="c-icon-button c-draw__control js-draw-eraser-l"><i class="fas fa-3x fa-eraser"></i></span>
+              <button class="c-icon-button c-draw__control js-draw-pencil-s"><i class="fas fa-pencil-alt"></i></span>
+              <button class="c-icon-button c-draw__control js-draw-pencil-m --selected"><i class="fas fa-2x fa-pencil-alt"></i></span>
+              <button class="c-icon-button c-draw__control js-draw-pencil-l"><i class="fas fa-3x fa-pencil-alt"></i></span>
+            </div>
+            <canvas class="c-draw__canvas js-draw-canvas" width="800" height="500"></canvas>
+          </div>
+          <button class="c-button h-mt-30 js-model-step-button">Get the 3D model!</button>
+        </div>
+
+        <!--- 3D modeler page -->
+        <div class="c-page-switcher__page h-hidden">
+          <div class="c-draw-modeler js-draw-modeler">
+            <div class="c-draw-modeler__scene js-draw-modeler-scene"></div>
+          </div>
+          <button class="c-button h-mt-30 js-download-model-buttton">Download model!</button>
+        </div>
+
+      </div> <!-- .pages -->
+    </div> <!-- .site -->
+  </body>
+</html>

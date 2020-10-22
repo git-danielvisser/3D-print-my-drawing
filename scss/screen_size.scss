@@ -1,0 +1,64 @@
+$xs-max: 567px;
+$sm-min: 567px;
+$md-min: 768px;
+$lg-min: 992px;
+$xl-min: 1200px;
+
+@mixin xs {
+    /* Extra small devices (phones) */
+    @media only screen and (max-width: $xs-max) {
+        @content;
+    }
+}
+
+@mixin sm {
+    /* Small devices (portrait tablets and large phones) */
+    @media only screen and (min-width: $sm-min) {
+        @content;
+    }
+}
+
+@mixin md {
+    /* Medium devices (landscape tablets) */
+    @media only screen and (min-width: $md-min) {
+        @content;
+    }
+}
+
+@mixin lg {
+    /* Large devices (laptops/desktops) */
+    @media only screen and (min-width: $lg-min) {
+        @content;
+    }
+}
+
+@mixin xl {
+    /* Extra large devices (large laptops and desktops) */
+    @media only screen and (min-width: $xl-min) {
+        @content;
+    }
+}
+
+@mixin size($screen-size) {
+    @if $screen-size == 'xs' {
+        @include xs {
+            @content;
+        }
+    } @else if $screen-size == 'sm' {
+        @include sm {
+            @content;
+        }
+    } @else if $screen-size == 'md' {
+        @include md {
+            @content;
+        }
+    } @else if $screen-size == 'lg' {
+        @include lg {
+            @content;
+        }
+    } @else if $screen-size == 'xl' {
+        @include xl {
+            @content;
+        }
+    }
+}

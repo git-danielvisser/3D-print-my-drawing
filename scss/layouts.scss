@@ -1,0 +1,24 @@
+@use 'screen_size.scss' as ss;
+
+/**
+* Layouts
+*/
+
+.l-flex {
+    display: flex;
+    flex-flow: column;
+
+    &.--flow-row {
+      flex-flow: row;
+    }
+
+    &__item {
+        flex-grow: 1;
+    }
+
+    @include ss.md {
+      &.--flow-row-md {
+        flex-flow: row;
+      }
+    }
+}

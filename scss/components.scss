@@ -1,0 +1,118 @@
+@use 'screen_size.scss' as ss;
+
+/**
+* Components
+*/
+
+.c-text-field {
+    &__label {
+        font-weight: 700;
+
+        display: block;
+    }
+
+    &__input {
+        margin-top: 5px;
+        padding: 10px;
+        max-width: 300px;
+        border: solid 2px #000;
+    }
+}
+
+.c-button {
+    font-weight: bold;
+
+    display: block;
+
+    box-sizing: border-box;
+    padding: 14px 13px;
+
+    transition: box-shadow 300ms, text-shadow 300ms;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    background: #000;
+
+    &:hover {
+        box-shadow: 0 3px 30px rgba(#08d904, 1);
+        text-shadow: 0 1px 1px rgba(#08d904, 1);
+    }
+}
+
+.c-icon-button {
+    font-size: 0.7rem;
+
+    padding: 5px;
+
+    border: solid 2px #000;
+    background: #fff;
+
+    @include ss.md {
+        font-size: 1rem;
+
+        padding: 10px;
+    }
+
+    &.--selected {
+        background: #08d904;
+    }
+
+    &:hover:not(.--selected) {
+        background: #eee;
+    }
+
+    * {
+        pointer-events: none;
+    }
+};
+
+.c-page-switcher {
+    height: 100%;
+    padding: 20px;
+
+    background: #eee;
+
+    &__page {
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+        justify-content: center;
+    }
+}
+
+.c-draw {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+
+    &__controls {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+
+        margin-bottom: 20px;
+    }
+
+    &__control:first-child {
+        margin-left: 0;
+    }
+
+    &__control {
+        margin-left: 10px;
+    }
+
+    &__canvas {
+        border: solid 2px #000;
+        background: #fff;
+    }
+};
+
+.c-drawing-modeler {
+    &__scene {
+        border: 1px solid black;
+    }
+}
