@@ -1,6 +1,6 @@
 # 3D-print-my-drawing
 
-This app converts a user made canvas drawing to an 3D-drawing printable stl file.
+This web app converts a user made canvas drawing to an 3D-drawing printable stl file. Without the help of a server, purely javascript.
 
 Hosted on github pages: https://git-danielvisser.github.io/3D-print-my-drawing/ 
 
