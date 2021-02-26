@@ -71,25 +71,19 @@ function DrawModeler(element, canvasWidth, canvasHeight) {
   };
 
   // -- Internals -- //
-  let _scene;
-  let _camera;
-  let _renderer;
-  let _controls;
-
   /**
    * Sets up the basic three js scene, without any models.
    */
-  (function _setup() {
     const sceneEle = element.querySelector(S_DRAW_MODELER_SCENCE);
-    _scene = new THREE.Scene();
+    const _scene = new THREE.Scene();
 
-    _renderer = new THREE.WebGLRenderer();
+    const _renderer = new THREE.WebGLRenderer();
     _renderer.setSize(canvasWidth, canvasHeight);
     sceneEle.appendChild(_renderer.domElement);
 
-    _camera = new THREE.PerspectiveCamera(100, canvasWidth / canvasHeight, 0.1, 5000);
+    const _camera = new THREE.PerspectiveCamera(100, canvasWidth / canvasHeight, 0.1, 5000);
 
-    _controls = new THREE.OrbitControls(_camera, sceneEle, sceneEle);
+    const _controls = new THREE.OrbitControls(_camera, sceneEle, sceneEle);
 
     const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 1);
     directionalLight.position.set(0, 20, 150);
@@ -100,7 +94,7 @@ function DrawModeler(element, canvasWidth, canvasHeight) {
     _scene.add(ambientLight);
 
     _animateScene();
-  })();
+
 
   /**
    * Animates the scene, gets invoked when a frame is requested.
